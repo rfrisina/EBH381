@@ -1,0 +1,231 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=28,walltime=24:00:00
+#PBS -N AllDenisova
+#PBS -q gpu-long
+module load shared
+module load anaconda/2
+
+cd /gpfs/scratch/jgaige/denisovan4
+
+zcat T_hg19_1000g.1.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.1.vcf.gz
+
+bgzip -d Den4.1.vcf.gz
+
+bgzip Den4.1.vcf
+
+python2 strip_vcf.py Den4.1.vcf.gz Den4.1.strip.vcf.gz
+
+tabix -p vcf Den4.1.strip.vcf.gz
+
+zcat T_hg19_1000g.2.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.2.vcf.gz
+
+bgzip -d Den4.2.vcf.gz
+
+bgzip Den4.2.vcf
+
+python2 strip_vcf.py Den4.2.vcf.gz Den4.2.strip.vcf.gz
+
+tabix -p vcf Den4.2.strip.vcf.gz
+
+zcat T_hg19_1000g.3.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.3.vcf.gz
+
+bgzip -d Den4.3.vcf.gz
+
+bgzip Den4.3.vcf
+
+python2 strip_vcf.py Den4.3.vcf.gz Den4.3.strip.vcf.gz
+
+tabix -p vcf Den4.3.strip.vcf.gz
+
+zcat T_hg19_1000g.4.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.4.vcf.gz
+
+bgzip -d Den4.4.vcf.gz
+
+bgzip Den4.4.vcf
+
+python2 strip_vcf.py Den4.4.vcf.gz Den4.4.strip.vcf.gz
+
+tabix -p vcf Den4.4.strip.vcf.gz
+
+zcat T_hg19_1000g.5.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.5.vcf.gz
+
+bgzip -d Den4.5.vcf.gz
+
+bgzip Den4.5.vcf
+
+python2 strip_vcf.py Den4.5.vcf.gz Den4.5.strip.vcf.gz
+
+tabix -p vcf Den4.5.strip.vcf.gz
+
+zcat T_hg19_1000g.6.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.6.vcf.gz
+
+bgzip -d Den4.6.vcf.gz
+
+bgzip Den4.6.vcf
+
+python2 strip_vcf.py Den4.6.vcf.gz Den4.6.strip.vcf.gz
+
+tabix -p vcf Den4.6.strip.vcf.gz
+
+zcat T_hg19_1000g.7.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.7.vcf.gz
+
+bgzip -d Den4.7.vcf.gz
+
+bgzip Den4.7.vcf
+
+python2 strip_vcf.py Den4.7.vcf.gz Den4.7.strip.vcf.gz
+
+tabix -p vcf Den4.7.strip.vcf.gz
+
+zcat T_hg19_1000g.8.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.8.vcf.gz
+
+bgzip -d Den4.8.vcf.gz
+
+bgzip Den4.8.vcf
+
+python2 strip_vcf.py Den4.8.vcf.gz Den4.8.strip.vcf.gz
+
+tabix -p vcf Den4.8.strip.vcf.gz
+
+zcat T_hg19_1000g.9.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.9.vcf.gz
+
+bgzip -d Den4.9.vcf.gz
+
+bgzip Den4.9.vcf
+
+python2 strip_vcf.py Den4.9.vcf.gz Den4.9.strip.vcf.gz
+
+tabix -p vcf Den4.9.strip.vcf.gz
+
+zcat T_hg19_1000g.10.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.10.vcf.gz
+
+bgzip -d Den4.10.vcf.gz
+
+bgzip Den4.10.vcf
+
+python2 strip_vcf.py Den4.10.vcf.gz Den4.10.strip.vcf.gz
+
+tabix -p vcf Den4.10.strip.vcf.gz
+
+zcat T_hg19_1000g.11.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.11.vcf.gz
+
+bgzip -d Den4.11.vcf.gz
+
+bgzip Den4.11.vcf
+
+python2 strip_vcf.py Den4.11.vcf.gz Den4.11.strip.vcf.gz
+
+tabix -p vcf Den4.11.strip.vcf.gz
+
+zcat T_hg19_1000g.12.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.12.vcf.gz
+
+bgzip -d Den4.12.vcf.gz
+
+bgzip Den4.12.vcf
+
+python2 strip_vcf.py Den4.12.vcf.gz Den4.12.strip.vcf.gz
+
+tabix -p vcf Den4.12.strip.vcf.gz
+
+zcat T_hg19_1000g.13.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.13.vcf.gz
+
+bgzip -d Den4.13.vcf.gz
+
+bgzip Den4.13.vcf
+
+python2 strip_vcf.py Den4.13.vcf.gz Den4.13.strip.vcf.gz
+
+tabix -p vcf Den4.13.strip.vcf.gz
+
+zcat T_hg19_1000g.14.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.14.vcf.gz
+
+bgzip -d Den4.14.vcf.gz
+
+bgzip Den4.14.vcf
+
+python2 strip_vcf.py Den4.14.vcf.gz Den4.14.strip.vcf.gz
+
+tabix -p vcf Den4.14.strip.vcf.gz
+
+zcat T_hg19_1000g.15.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.15.vcf.gz
+
+bgzip -d Den4.15.vcf.gz
+
+bgzip Den4.15.vcf
+
+python2 strip_vcf.py Den4.15.vcf.gz Den4.15.strip.vcf.gz
+
+tabix -p vcf Den4.15.strip.vcf.gz
+
+zcat T_hg19_1000g.16.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.16.vcf.gz
+
+bgzip -d Den4.16.vcf.gz
+
+bgzip Den4.16.vcf
+
+python2 strip_vcf.py Den4.16.vcf.gz Den4.16.strip.vcf.gz
+
+tabix -p vcf Den4.16.strip.vcf.gz
+
+zcat T_hg19_1000g.17.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.17.vcf.gz
+
+bgzip -d Den4.17.vcf.gz
+
+bgzip Den4.17.vcf
+
+python2 strip_vcf.py Den4.17.vcf.gz Den4.17.strip.vcf.gz
+
+tabix -p vcf Den4.17.strip.vcf.gz
+
+zcat T_hg19_1000g.18.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.18.vcf.gz
+
+bgzip -d Den4.18.vcf.gz
+
+bgzip Den4.18.vcf
+
+python2 strip_vcf.py Den4.18.vcf.gz Den4.18.strip.vcf.gz
+
+tabix -p vcf Den4.18.strip.vcf.gz
+
+zcat T_hg19_1000g.19.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.19.vcf.gz
+
+bgzip -d Den4.19.vcf.gz
+
+bgzip Den4.19.vcf
+
+python2 strip_vcf.py Den4.19.vcf.gz Den4.19.strip.vcf.gz
+
+tabix -p vcf Den4.19.strip.vcf.gz
+
+zcat T_hg19_1000g.20.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.20.vcf.gz
+
+bgzip -d Den4.20.vcf.gz
+
+bgzip Den4.20.vcf
+
+python2 strip_vcf.py Den4.20.vcf.gz Den4.20.strip.vcf.gz
+
+tabix -p vcf Den4.20.strip.vcf.gz
+
+zcat T_hg19_1000g.21.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.21.vcf.gz
+
+bgzip -d Den4.21.vcf.gz
+
+bgzip Den4.21.vcf
+
+python2 strip_vcf.py Den4.21.vcf.gz Den4.21.strip.vcf.gz
+
+tabix -p vcf Den4.21.strip.vcf.gz
+
+zcat T_hg19_1000g.22.mod.vcf.gz | awk '{if ($0~"#") print $0; else if (($5!=".") && ($10!="0/0")) print $0 }' > Den4.22.vcf.gz
+
+bgzip -d Den4.22.vcf.gz
+
+bgzip Den4.22.vcf
+
+python2 strip_vcf.py Den4.22.vcf.gz Den4.22.strip.vcf.gz
+
+tabix -p vcf Den4.22.strip.vcf.gz
+
+echo "done" > out.text
+
